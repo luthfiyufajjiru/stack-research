@@ -1,0 +1,14 @@
+services:
+  nats-server:
+    image: nats:latest
+    container_name: nats-server-dev
+    ports:
+      - "4222:4222"
+      - "8222:8222"
+    networks:
+      - nats-net
+    command: ["-DV"]
+
+networks:
+  nats-net:
+    driver: host
